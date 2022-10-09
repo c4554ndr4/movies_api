@@ -26,5 +26,6 @@ curl --header "Content-Type: application/json" -d '{"year":"2010"}' -X GET http:
 Further improvements include: creating a pipenv and lock file to manage dependencies easily.
 I'm not sure I calculated popularity correctly, as the docs were unclear on the definition of the popularity column
 Downloading the csv file is really slow. Caching the csv file helps, but I'm not fetching the csv file again when I run the app again in case there's any changed, and I don't delete the csv file when the app shuts down.
+I tried using boto3 (a python module that lets provides functionality to innteract with web3 buckets), which could have been faster, but I couldn't get it working.
 Ideally, I would do the database searching on the server that contains the csv files so I don't have to download them.
 In a production environment, I would add a lot more type checking and error handling, especially if the csv files were going to have new values added that I don't know the format of. Or, if a malicious actor can modify the database.
